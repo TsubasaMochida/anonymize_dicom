@@ -5,7 +5,7 @@ A Python library for anonymizing DICOM files.
 
 Dependencies
 ------------
-pydicom - see https://code.google.com/p/pydicom/
+pydicom - see https://github.com/darcymason/pydicom
 
 Usage
 -----
