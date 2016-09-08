@@ -1,37 +1,60 @@
 import sys
 import os
 import os.path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '../pydicom/pydicom')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../pydicom/')
 
 import pydicom as dicom
 import glob
 
 REMOVE_BY_DEFAULT = (
-    'PatientBirthDate',
-    'InstitutionAddress',
-    'OtherPatientIDs',
-    'PerformingPhysicianName',
-    'OperatorsName',
-    'ReferringPhysicianName',
-    'StudyDate',
-    'AcquisitionDate',
-    'ContentDate',
-    'AcquisitionDateTime',
-    'StudyTime',
-    'ContentTime',
-    'SeriesTime',
-    'AcquisitionTime',
-    'AccessionNumber',
-    'StationName',
-    'StudyID',
-    'RequestingService',
-    'RequestedProcedureDescription'
 )
 
 SUBSTITUTE_BY_DEFAULT = {
     'PatientName' : 'Patient A. Nonymous',
     'PatientID' : '12345678',
     'InstitutionName' : 'The Hospital',
+    'IssuerOfPatientID' : '',
+    'TypeOfPatientID' : '',
+    'PatientBirthDate' : '00000000',
+    'PatientBirthTime' : '123456.78',
+    'PatientSex' : '',
+    'OtherPatientIDs' : '',
+    'OtherPatientNames' : '',
+    'PatientBirthName' : '',
+    'PatientAge' : '0000',
+    'PatientSize' : '',
+    'PatientWeight' : '',
+    'PatientAddress' : '',
+    'InsurancePlanIdentificationRETIRED': '',
+    'PatientMotherBirthName' : '',
+    'MilitaryRank' : '',
+    'BranchOfService' : '',
+    'MedicalRecordLocator' : '',
+    'MedicalAlerts' : '',
+    'Allergies' : '',
+    'CountryOfResidence' : '',
+    'RegionOfResidence' : '',
+    'PatientTelephoneNumbers' : '',
+    'EthnicGroup' : '',
+    'Occupation' : '',
+    'SmokingStatus' : '',
+    'AdditionalPatientHistory' : '',
+    'PregnancyStatus' : '',
+    'LastMenstrualDate' : '00000000',
+    'PatientReligiousPreference' : '',
+    'PatientSpeciesDescription' : '',
+    'PatientSexNeutered' : '',
+    'AnatomicalOrientationType' : '',
+    'PatientBreedDescription' : '',
+    'BreedRegistrationNumber' : '',
+    'ResponsiblePerson' : '',
+    'ResponsiblePersonRole' : '',
+    'ResponsibleOrganization' : '',
+    'PatientComments' : '',
+    'ExaminedBodyThickness' : '0.0000f',
+    'InstitutionName' : '',
+    'InstitutionAddress' : ''
+
 }
 
 def anonymize_dir(in_path, out_path, **kwargs):
