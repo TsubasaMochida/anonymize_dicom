@@ -1,7 +1,10 @@
-import dicom
-import glob
+import sys
 import os
 import os.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '../pydicom/pydicom')
+
+import pydicom as dicom
+import glob
 
 REMOVE_BY_DEFAULT = (
     'PatientBirthDate',
@@ -39,7 +42,7 @@ def anonymize_dir(in_path, out_path, **kwargs):
     # Check input directory
     if not os.path.isdir(in_path):
         raise Exception(in_path + ' is not a directory')
-    
+
     # Check output directory
     if os.path.exists(out_path):
         if not os.path.isdir(out_path):
@@ -64,7 +67,7 @@ def anonymize_file(in_path, out_path, keep=(), remove=(), keep_private_tags=Fals
     :param kwargs: Parameters and associated value will be substituted.
 
     All field names can be given in camel case (like PatientName) or in underlined format (like patient_name)
-    to conform with python conventions. 
+    to conform with python conventions.
 
     There are a few fields that are substituted by default and a lot of fields that are removed by default.
     '''

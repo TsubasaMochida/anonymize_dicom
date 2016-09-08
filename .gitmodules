@@ -1,0 +1,3 @@
+[submodule "pydicom"]
+	path = pydicom
+	url = git@github.com:darcymason/pydicom.git
