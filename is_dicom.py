@@ -15,5 +15,5 @@ def is_dicom(file):
 if is_dicom(param[1]) :
     sys.stdout.write('TRUE')
 else :
-    sys.stdout.write('FALSE')
+    sys.stderr.write('FALSE')
 
