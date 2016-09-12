@@ -13,7 +13,7 @@ def is_dicom(file):
         return False
 
 if is_dicom(param[1]) :
-    print "dicom"
+    sys.stdout.write('TRUE')
 else :
-    print "not dicom"
+    sys.stdout.write('FALSE')
 
